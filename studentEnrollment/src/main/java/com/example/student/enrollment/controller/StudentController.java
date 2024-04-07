@@ -53,9 +53,14 @@ public class StudentController {
 		return studentservice.updateStudent(student);
 	}
 	
-	@DeleteMapping("/delete")
+	/*@DeleteMapping("/delete")
 	public boolean delete(@RequestBody int studentId) {
 		return studentservice.deleteStudentById(studentId);
+	}
+	*/
+	@DeleteMapping("/delete/{id}")
+	public boolean delete(@PathVariable int id) {
+		return studentservice.deleteStudentById(id);
 	}
 	
 }

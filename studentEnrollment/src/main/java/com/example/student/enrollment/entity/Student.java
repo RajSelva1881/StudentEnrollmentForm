@@ -3,6 +3,8 @@ package com.example.student.enrollment.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,5 +33,12 @@ public class Student implements Serializable{
 	private Date dob;
 	private String email;
 	private boolean enrollmentActive;
-	
+
+	@JsonFormat(pattern="MM-dd-yyyy")
+	public void setDob(Date date)
+	{
+		dob = date;
+	}
 }
+
+
